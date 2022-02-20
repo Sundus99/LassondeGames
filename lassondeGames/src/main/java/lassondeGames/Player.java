@@ -4,13 +4,13 @@ import javax.swing.JLabel;
 
 public class Player {
 	private int x,y;
-	private ImageIcon player;
+	private ImageIcon playerIcon;
 	private JLabel pl;
 	private final int width =25;
 	private final int height =25;
 	
-	public Player(ImageIcon pl, int x, int y) {
-		this.player = pl;
+	public Player(ImageIcon plIcon, int x, int y) {
+		this.playerIcon = plIcon;
 		this.x = x;
 		this.y = y;
 		setPl();
@@ -33,7 +33,7 @@ public class Player {
 	}
 
 	public ImageIcon getPlayer() {
-		return player;
+		return this.playerIcon;
 	}
 	public JLabel getPl() {
 		return this.pl;
@@ -41,10 +41,11 @@ public class Player {
 	public void setPl() {
 		pl = new JLabel();
 		pl.setBounds(this.x, this.y, width, height);
-		pl.setIcon(this.player);
+		pl.setIcon(this.playerIcon);
 	}
 	
 	//player movements
+	
 	public void moveLeft() {
 		this.pl.setLocation(x-=5, y);
 	}
